@@ -1,0 +1,31 @@
+/* .order-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.order-card-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.order-card-image {
+  width: 4rem;
+  height: 4rem;
+}
+
+.order-card-title {
+  font-size: 1rem;
+  font-weight: light;
+}
+
+.order-card-price {
+  font-size: 1.25rem;
+  font-weight: medium;
+}
+
+.order-card-delete-icon {
+  cursor: pointer;
+} */

@@ -1,0 +1,26 @@
+.my-order-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20rem;
+  margin-bottom: 1.5rem;
+}
+
+.my-order-icon {
+  position: absolute;
+  left: 0;
+}
+
+.chevron-left-icon{
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.my-order-container{
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+}

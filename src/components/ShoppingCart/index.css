@@ -1,0 +1,30 @@
+/* 
+.shopping-cart-container {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.shopping-cart-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: black;
+}
+
+.cart-items-count {
+  position: absolute;
+  bottom: 0.35rem;
+  left: 0.35rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: black;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.75rem;
+  color: white;
+} */

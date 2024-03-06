@@ -1,0 +1,36 @@
+/* .orders-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 80px;
+}
+
+.orders-card-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.orders-card-date,
+.orders-card-articles {
+  display: flex;
+  flex-direction: column;
+}
+
+.orders-card-icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+.orders-card-price {
+  font-size: 2rem;
+  font-weight: medium;
+}
+
+.orders-card-chevron {
+  cursor: pointer;
+} */

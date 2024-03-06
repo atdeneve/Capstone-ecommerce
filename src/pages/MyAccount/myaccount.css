@@ -1,0 +1,66 @@
+.my-account-info {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+} 
+
+.my-account-details {
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+.edit-button {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.my-account-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20rem;
+}
+
+.my-account-edit-form label {
+  font-weight: lighter;
+  font-size: 0.875rem;
+}
+
+.my-account-edit-form-info {
+  border-radius: 0.375rem;
+  border: 1px solid #000;
+  font-weight: lighter;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+  outline: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.my-account-edit-form-info::placeholder{
+  font-weight: lighter;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.my-account-edit-form-button {
+  background-color: black;
+  color: white;
+  width: 100%;
+  border-radius: 0.375rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+} 
+
+.my-account-title{
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  width: 20rem;
+}
