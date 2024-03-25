@@ -16,7 +16,7 @@ function MyOrder() {
     <>
       <div className="my-order-header">
         <Link to="/my-orders" className="my-order-icon">
-          <ChevronLeftIcon className="chevron-left-icon" />
+          <ChevronLeftIcon className="chevron-left-icon" style={{ height: '50px', width: '50px' }}/>
         </Link>
         <h1>My Order</h1>
       </div>

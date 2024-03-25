@@ -1,0 +1,13 @@
+.shipping-form{
+  position: absolute;
+  top: 60px;
+}
+
+.shipping-header{
+  padding: 20px;
+  font-size: 60px;
+}
+
+label{ 
+  padding: 10px;
+}

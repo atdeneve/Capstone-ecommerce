@@ -1,8 +1,11 @@
-/* .order-card-container {
+.order-card-container {
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
+  width: 100px;
+  height: 100px;
 }
 
 .order-card-details {
@@ -12,8 +15,8 @@
 }
 
 .order-card-image {
-  width: 4rem;
-  height: 4rem;
+  width: 100px;
+  height: 100px;
 }
 
 .order-card-title {
@@ -28,4 +31,4 @@
 
 .order-card-delete-icon {
   cursor: pointer;
-} */
+} 

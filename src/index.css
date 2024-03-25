@@ -1,17 +1,23 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+:root {
+  font-family: "Crimson Text", serif;
   font-weight: 400;
+  font-style: normal;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(9, 9, 9, 0.87);
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
 
 a {
   font-weight: 500;
@@ -24,15 +30,14 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+
   min-width: 320px;
   min-height: 100vh;
-}
+  height: 100%;
+  overflow: hidden;
+  padding-top: 50px;
+  padding-left: 15px;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 button {
@@ -65,4 +70,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+} 

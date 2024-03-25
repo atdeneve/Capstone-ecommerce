@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
-
-import "./index.css"
 import { ShoppingCartContext } from "../../contexts";
 import { ShoppingCart } from "../ShoppingCart/index"
+import { LogIn } from "../../pages/LogIn/login";
+import "./index.css"
 
 const NavBar = () => {
   const { 
@@ -11,11 +11,18 @@ const NavBar = () => {
     userAccount, 
     saveLogOut, 
     setCartProducts, 
-    setIsCheckoutPopUpOpen, 
     setSearchByName, 
     setIsProductInfoOpen } = useContext(ShoppingCartContext);
 
-    // const activeStyle = "underline underline-offset-4";
+    const [ isActive, setIsActive ] = useState(false);
+
+    const toggleActiveClass = () => {
+      setIsActive(!isActive);
+    };
+
+    const removeActive = () => {
+      setIsActive(false);
+    }
 
     const isUserLoggedOut = logOut;
     const hasUserAccount = Object.keys(userAccount).length !== 0;
@@ -26,7 +33,6 @@ const NavBar = () => {
   
     const handleLogOut = () => {
       setCartProducts([]);
-      setIsCheckoutPopUpOpen(false);
       setIsProductInfoOpen(false);
       setSearchByName('');
       saveLogOut(true);
@@ -39,14 +45,6 @@ const NavBar = () => {
           <>
             <li className="navbar-email">
               { userAccount?.email }
-            </li>
-            <li>
-              <NavLink
-                to="/my-orders"
-                className="navbar-link"
-              >
-                My Orders
-              </NavLink>
             </li>
             <li>
               <NavLink
@@ -67,6 +65,19 @@ const NavBar = () => {
             </li>
           </>
         );
+      } else {
+        return (
+          <>
+            <li>
+              <NavLink
+                to="/sign-in"
+                className="navbar-link"
+              >
+                Sign In
+              </NavLink>
+            </li>
+          </>
+        )
       }
     }
 

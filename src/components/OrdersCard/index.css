@@ -12,7 +12,8 @@
 .orders-card-details {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center; 
+  width: calc(100% - 20px); 
 }
 
 .orders-card-date,
@@ -21,16 +22,15 @@
   flex-direction: column;
 }
 
-.orders-card-icon {
-  height: 1rem;
-  width: 1rem;
+.orders-card-icon,
+.orders-card-chevron {
+  height: 10px;
+  width: 10px;
+
+  cursor: pointer;
 }
 
 .orders-card-price {
   font-size: 2rem;
   font-weight: medium;
-}
-
-.orders-card-chevron {
-  cursor: pointer;
 } */
