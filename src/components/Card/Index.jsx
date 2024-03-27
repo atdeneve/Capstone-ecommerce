@@ -10,12 +10,11 @@ const Card = ({ productData }) => {
     setProductToShow,
     cartProducts,
     setCartProducts,
-    setIsCheckoutPopUpOpen,
+
     fetchSingleProduct,
   } = useContext(ShoppingCartContext);
 
   const handleProductClick = () => {
-    setIsCheckoutPopUpOpen(false);
     setIsProductInfoOpen(true);
     setProductToShow(productData);
   };
@@ -56,18 +55,20 @@ const Card = ({ productData }) => {
         </span>
         <img className="card-image" src={productData.image} alt={productData.title}/>
       </figure>
-      <p className="card-details">
-        <span className="card-title">{productData.title}</span>
-        <span className="card-price">${productData.price}</span>
-      </p>
-      <button 
-          className="icon-button"
-          onClick={isInCart ? undefined : handleAddToCart}
-        >
+      <div className="class-content">
+        <p className="card-details">
+          <span className="card-title">{productData.title}</span>
+          <span className="card-price">${productData.price}</span>
+        </p>
+        <button 
+            className="icon-button"
+            onClick={isInCart ? undefined : handleAddToCart}
+          >
           {isInCart ? <CheckIcon className="icon-button-check" /> : 
           <PlusIcon className="icon-button-plus"
           />}
         </button>
+      </div>
     </div>
   );
 };

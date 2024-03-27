@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useCallback } from "react";
 import { Link } from 'react-router-dom';
 import { ShoppingCartContext } from "../../contexts";
+import './shippingform.css'
 
 const ShippingForm = () => {
 
@@ -10,84 +11,76 @@ const ShippingForm = () => {
     CountrySelect,
   } = useContext(ShoppingCartContext);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value
     });
-  };
+  }, [formData, setFormData]);
 
   return (
     <div className="shipping-form">
       <h1 className="shipping-header">Shipping Information</h1>
-        <label htmlFor="fullName">Full Name:
+        <label htmlFor="fullName" className="shipping-label">Full Name:
           <input
             type="text"
             name="fullName"
-            value={formData.fullName}
+            defaultValue={formData.fullName}
             onChange={handleInputChange}
           />
         </label>
-        <br/>
-        <label htmlFor="addressLine1">Address Line 1:
+        <label htmlFor="addressLine1" className="shipping-label">Address Line 1:
           <input
             type="text"
             name="addressLine1"
-            value={formData.addressLine1}
+            defaultValue={formData.addressLine1}
             onChange={handleInputChange}
           />
         </label>
-        <br/>
-        <label htmlFor="addressLine2">Address Line 2:
+        <label htmlFor="addressLine2" className="shipping-label">Address Line 2:
           <input
             type="text"
             name="addressLine2"
-            value={formData.addressLine2}
+            defaultValue={formData.addressLine2}
             onChange={handleInputChange}
           />
         </label>
-        <br/>
-        <label htmlFor="city">City:
+        <label htmlFor="city" className="shipping-label">City:
           <input
             type="text"
             name="city"
-            value={formData.city}
+            defaultValue={formData.city}
             onChange={handleInputChange}
           />
         </label>
-        <br/>
-        <label htmlFor="stateProvinceRegion">State/Province/Region:
+        <label htmlFor="stateProvinceRegion" className="shipping-label">State/Province/Region:
           <input
             type="text"
             name="stateProvinceRegion"
-            value={formData.state}
+            defaultValue={formData.state}
             onChange={handleInputChange}
           />
         </label>
-        <br/>
-        <label htmlFor="zip">ZIP:
+        <label htmlFor="zip" className="shipping-label">ZIP:
           <input
             type="number"
             name="zip"
-            value={formData.zip}
+            defaultValue={formData.zip}
             onChange={handleInputChange}
           />
         </label>
-        <br/>
-        <label htmlFor="countrySelect">Country:
+        <label htmlFor="countrySelect" className="shipping-label">Country:
           <CountrySelect className="countrySelect" value={formData.country}/>
         </label>
-        <br/>
-        <label htmlFor="phoneNumber">Phone Number:
+        <label htmlFor="phoneNumber" className="shipping-label">Phone Number:
           <input
-            type="tel"
+            type="number"
             name="phoneNumber"
-            value={formData.phone}
+            defaultValue={formData.phone}
             onChange={handleInputChange}
           />
         </label>
-        <br/>
         <Link to="/order-confirmation">
           <button className="order-button">Order</button>
         </Link>

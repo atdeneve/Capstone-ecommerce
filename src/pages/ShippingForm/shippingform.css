@@ -1,13 +1,26 @@
 .shipping-form{
   position: absolute;
   top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 90%;
 }
 
 .shipping-header{
   padding: 20px;
-  font-size: 60px;
+  font-size: 45px;
+}
+
+.shipping-label { 
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 label{ 
   padding: 10px;
 }
+

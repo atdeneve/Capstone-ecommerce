@@ -9,6 +9,13 @@
   font-size: 0.875rem;
 }
 
+.outline { 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .edit-button {
   border: 1px solid black;
   border-radius: 0.5rem;

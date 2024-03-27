@@ -14,16 +14,6 @@ const NavBar = () => {
     setSearchByName, 
     setIsProductInfoOpen } = useContext(ShoppingCartContext);
 
-    const [ isActive, setIsActive ] = useState(false);
-
-    const toggleActiveClass = () => {
-      setIsActive(!isActive);
-    };
-
-    const removeActive = () => {
-      setIsActive(false);
-    }
-
     const isUserLoggedOut = logOut;
     const hasUserAccount = Object.keys(userAccount).length !== 0;
 

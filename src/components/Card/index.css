@@ -1,17 +1,25 @@
 .card-container {
   cursor: pointer;
-  width: 200px;
-  height: 350px;
+  width: 352.67px;
+  height: auto;
   border-radius: 8px;
   border-color: rgba(61, 60, 60, 0.6);
   margin-bottom: 20px;
   margin-top: 20px;
-  display: grid;
-  grid-column: 1 / span 2;
+  position: relative; 
+}
+
+.card-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .card-image {
-  width: 100px;
+  width: 100%;
+  height: auto;
   border-radius: 8px;
 }
 
@@ -51,9 +59,11 @@
 
 .card-details {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+  align-content: stretch;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .card-title {

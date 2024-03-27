@@ -117,31 +117,20 @@ export const ShoppingCartProvider = ({ children }) => {
   //   }
   // }, [cartProductQuantity]);
 
-  const calculateTotalPrice = (products) => {
-    if(!products || products.length === 0) {
-      return 0;
-    }
-    
-    return products.reduce((total, product) => {
-      return total + product.price * product.quantity;
-    }, 0);
-  };
+  const calculateTotalPrice = (cartProducts, cartProductQuantity) => {
+    let total = 0;
 
-  useEffect(() => {
-    console.log("Loading cart from localStorage")
-    const storedCart = window.localStorage.getItem('cart');
-    if(storedCart) {
-      console.log("Found cart in localStorage:", storedCart)
-      setCartProducts(JSON.parse(storedCart));
-    }
-  }, []);
-
-  useEffect(() => {
-    console.log("Saving cart to localStorage", cartProducts)
-    window.localStorage.setItem('cart', JSON.stringify(cartProducts));
-  }, [cartProducts])
+    cartProducts.forEach(product => {
+      const quantityObject = cartProductQuantity.find(item => item.id === product.id);
+      const quantity = quantityObject ? quantityObject.quantity : 0;
+      total += product.price * quantity;
+    })
+    return total;
+  }
   
   useEffect(() => {
+    console.log(cartProducts);
+    console.log(cartProductQuantity);
     console.log('Cart product quantity updated:', cartProductQuantity);
   }, [cartProductQuantity]);
   

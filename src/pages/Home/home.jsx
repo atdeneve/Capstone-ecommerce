@@ -3,6 +3,7 @@ import { Card } from "../../components/Card/Index";
 import { ProductInfo } from "../../components/ProductInfo";
 import { ShoppingCartContext } from "../../contexts";
 import { Filter } from "../../components/Filter";
+import './home.css'
 
 function Home() {
   const { setSearchByName,
@@ -52,36 +53,43 @@ function Home() {
       <div className="header-container">
         <h1 className="header-title">Generic Fast Fashion Brand</h1>
       </div>
-      <div className="search-input-container">
-      <label htmlFor="search-input">Search Products:
-      <input
-        type="text"
-        placeholder="Search by Name"
-        className="search-input"
-        onChange={(event) => setSearchByName(event.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Filter products by max rating"
-        className="search-input"
-        onChange={(event) => setMaxRating(event.target.value)}
-      />
-      <input 
-        type="text"
-        placeholder="Filter products by price"
-        className="search-input"
-        onChange={(event) => setMaxPrice(event.target.value)}
-      />
-      </label>
+      <div 
+        className="search-input-container"
+      >
+        <div className="input-container">
+          <label htmlFor="search-input">Search Products:
+          <input
+            type="text"
+            placeholder="Search by Name"
+            className="search-input"
+            onChange={(event) => setSearchByName(event.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Filter products by max rating"
+            className="search-input"
+            onChange={(event) => setMaxRating(event.target.value)}
+          />
+          <input 
+            type="text"
+            placeholder="Filter products by price"
+            className="search-input"
+            onChange={(event) => setMaxPrice(event.target.value)}
+          />
+          </label>
+        </div>
       <br />
       <label className="filter-label">Filter Products: 
       <Filter />
       </label>
     </div>
-      <div className="grid-container">
+      <div 
+        className="product-container"
+        >
         {renderView()}
+        <ProductInfo />
       </div>
-      <ProductInfo />
+
     </div>
   );
 }

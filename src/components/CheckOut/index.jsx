@@ -1,9 +1,10 @@
 import { useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingCartContext } from '../../contexts';
 import { OrderCard } from '../OrderCard/index';
+import { ShoppingCartContext } from '../../contexts/index';
 // import { totalPrice } from "../../utilities/totalprice";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import './index.css'
 
 const CheckoutPage = () => {
   const {
@@ -12,11 +13,9 @@ const CheckoutPage = () => {
     order,
     setOrder,
     setSearchByName,
-    totalPrice,
     clearCart,
-    cartProductQuantity,
     calculateTotalPrice,
-    setTotalPrice,
+    cartProductQuantity,
   } = useContext(ShoppingCartContext);
 
   const navigate = useNavigate();
@@ -26,17 +25,14 @@ const CheckoutPage = () => {
     setCartProducts(filteredProducts);
   };
 
-  useEffect(() => {
-    const newTotalPrice = calculateTotalPrice(cartProducts);
-    setTotalPrice(newTotalPrice);
-  }, [cartProducts]); 
+  const totalPrice = calculateTotalPrice(cartProducts, cartProductQuantity);
 
   const handleCheckout = () => {
     const orderToAdd = {
       date: '02.27.24',
       products: cartProducts,
       totalProducts: cartProducts.length,
-      totalPrice: totalPrice,
+      totalPrice: totalPrice(cartProducts),
     };
 
     setOrder([...order, orderToAdd]);
@@ -50,7 +46,6 @@ const CheckoutPage = () => {
     <div className="checkout-page">
       <div className="checkout-header">
         <h2 className="checkout-title">My Order</h2>
-      </div>
       <div className="checkout-content">
         {cartProducts.map((product) => (
           <div key={product.id} className="checkout-product">
@@ -74,13 +69,17 @@ const CheckoutPage = () => {
           <span>Total:</span>
           <span>${totalPrice}</span>
         </p>
-        <button className="clear-cart" onClick={clearCart}></button>
-        <Link to="/shipping-form">
-          <button className="checkout-button" onClick={handleCheckout}>
-            Checkout
-          </button>
+        <div className='btn-container'>
+          <button className="clear-cart" onClick={clearCart}>Clear Cart</button>
+          <br></br>
+          <Link to="/shipping-form">
+            <button className="checkout-button" onClick={handleCheckout}>
+              Checkout
+            </button>
         </Link>
+        </div>
       </div>
+    </div>
     </div>
   );
 };
